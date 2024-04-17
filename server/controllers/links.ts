@@ -72,3 +72,16 @@ export const createLink: RequestHandler = async (req, res) => {
         console.error(error);
     }
 }
+
+export const deleteLink: RequestHandler = async (req, res) => {
+    const linkId = req.params.id
+
+    try {
+        await LinkModel.findByIdAndDelete(linkId);
+        res.status(200).send("Note deleted successfully.")
+    }
+
+    catch(error) {
+        console.error(error);
+    }
+}

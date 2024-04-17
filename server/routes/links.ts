@@ -7,4 +7,6 @@ router.get("/", LinksController.getLinks);
 
 router.post("/", LinksController.createLink);
 
+router.delete("/:id", LinksController.deleteLink);
+
 export default router;
