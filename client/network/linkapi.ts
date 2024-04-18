@@ -11,3 +11,13 @@ export const createLink = async (shortUrl: string) => {
         console.error(error);
     }
 }
+
+export const deleteLink = async (id: string) => {
+    try {
+        await axios.delete(`http://localhost:5000/api/links/${id}`)
+    }
+
+    catch(error) {
+        console.error(error);
+    }
+}

@@ -1,19 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as LinkApi from "../network/linkapi";
 import Link from "../components/Link";
+import LinkType from "../models/LinkType"
 
-interface Link {
-    title: string,
-    description: string,
-    imageLink: string,
-    longLink: string,
-    shortLink: string,
-    _id: string,
-}
 
 const App = () => {
+
     const [url, setUrl] = useState<string>("")
-    const [links, setLinks] = useState<Link[]>([])
+    const [links, setLinks] = useState<LinkType[]>([])
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUrl(event.target.value);
@@ -25,6 +19,10 @@ const App = () => {
         setLinks([newLink, ...links]) // Add newLink to the start
         setUrl(""); // Clear the input box
     }
+
+    useEffect(() => {
+        console.log(links)
+    }, [links])
 
     return (
         <div className="app-container">
@@ -38,13 +36,16 @@ const App = () => {
             <h2>your URLs will appear below ⬇️:</h2>
 
             {links.map((link) => (
-                <Link 
-                    key={link._id}
+                <Link
+                    key={link._id} 
+                    id={link._id}
                     imageLink={link.imageLink}
                     title={link.title}
                     description={link.description}
                     longLink={link.longLink}
                     shortLink={link.shortLink}
+                    links={links}
+                    setLinks={setLinks}
                 />
             ))}
         </div>
