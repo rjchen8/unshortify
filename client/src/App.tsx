@@ -20,9 +20,14 @@ const App = () => {
         setUrl(""); // Clear the input box
     }
 
+    const getAllLinks = async () => {
+        const fetchedLinks = await LinkApi.getAllLinks();
+        setLinks(fetchedLinks);
+    }
+
     useEffect(() => {
-        console.log(links)
-    }, [links])
+        getAllLinks();
+    }, [])
 
     return (
         <div className="app-container">

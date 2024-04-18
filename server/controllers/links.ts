@@ -10,7 +10,7 @@ const previewToken = process.env.PREVIEW_TOKEN;
 export const getLinks: RequestHandler = async (req, res) => {
     // Get all links from DB
     try {
-        const links = await LinkModel.find({});
+        const links = await LinkModel.find().sort({ createdAt: -1 });
         res.status(200).json(links);
     }
 
