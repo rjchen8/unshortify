@@ -1,12 +1,9 @@
 # Unshortify
----
-
 Unshortify is a URL "unshortener". It takes a URL that has been put through a URL shortener, and returns the original link.
 A preview of the site is also shown. Two APIs are used - one for the "unshortening" (unshorten.me), and the other for the site preview (LinkPreview).
 
 
 ## Tech 
----
 Frontend: React/TypeScript
 
 Backend: Node/Express + MongoDB
