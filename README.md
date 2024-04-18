@@ -5,7 +5,8 @@ A preview of the site is also shown. Two APIs are used - one for the "unshorteni
 
 ---
 
-### Tech Stack
+## Tech Stack
+---
 Frontend: React/TypeScript
 
 Backend: Node/Express + MongoDB
