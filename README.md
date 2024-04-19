@@ -8,4 +8,9 @@ Frontend: React/TypeScript
 
 Backend: Node/Express + MongoDB
 
+## Next Steps
+- Authentication
+- Dockerization
+- Deployment (?)
+
 <img width="1190" alt="image" src="https://github.com/rjchen8/unshortify/assets/122511498/c858366b-30ee-424a-ac7e-8de47148429a">
