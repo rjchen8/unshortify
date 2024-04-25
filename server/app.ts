@@ -5,6 +5,7 @@ import usersRoutes from "./routes/users";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import dotenv from "dotenv";
+import requiresAuth from "./middleware/requiresAuth";
 
 dotenv.config();
 const mongoUrl = process.env.CONNECTION_STRING;
@@ -28,6 +29,6 @@ app.use(session({
 }))
 
 app.use("/api/users", usersRoutes);
-app.use("/api/links", linksRoutes);
+app.use("/api/links", requiresAuth, linksRoutes);
 
 export default app;

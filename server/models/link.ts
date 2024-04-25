@@ -5,7 +5,8 @@ const linkSchema = new Schema({
     shortLink: { type: String, required: true },
     title: { type: String },
     description: { type: String},
-    imageLink: { type: String }
+    imageLink: { type: String },
+    userId: { type: Schema.Types.ObjectId, required: true }
 
 }, {timestamps: true});
 

@@ -10,7 +10,7 @@ const previewToken = process.env.PREVIEW_TOKEN;
 export const getLinks: RequestHandler = async (req, res) => {
     // Get all links from DB
     try {
-        const links = await LinkModel.find().sort({ createdAt: -1 });
+        const links = await LinkModel.find({ userId: req.session.userId }).sort({ createdAt: -1 });
         res.status(200).json(links);
     }
 
@@ -56,6 +56,7 @@ export const createLink: RequestHandler = async (req, res) => {
         const title = previewResponse.data.title;
         const description = previewResponse.data.description;
         const imageLink = previewResponse.data.image;
+        const userId = req.session.userId
         
         const newLink = await LinkModel.create({
             shortLink: shortLink,
@@ -63,6 +64,7 @@ export const createLink: RequestHandler = async (req, res) => {
             title: title,
             description: description,
             imageLink: imageLink,
+            userId: userId,
         })
 
         res.status(201).json(newLink);
