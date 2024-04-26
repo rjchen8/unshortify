@@ -25,7 +25,7 @@ h3 {
     font-weight: 300;
 }
 
-form {
+.urlForm {
     margin-bottom: 4%;
 }
 
@@ -75,4 +75,24 @@ form {
     border-radius: 4px;
     margin-bottom: 6px;
     margin-left: 90%
+}
+
+input {
+    display: block;
+}
+
+.loginForm {
+    margin-bottom: 1%;
+}
+
+.loginButton {
+    background-color: #131212;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    border-color: white;
+}
+
+a {
+    color: white;
 }
