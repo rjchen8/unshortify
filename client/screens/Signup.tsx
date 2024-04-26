@@ -16,7 +16,7 @@ const Signup: React.FC<SignupProps> = ({ setLoggedIn }) => {
         event.preventDefault();
         const user = await UserApi.createUser(username, password);
         setLoggedIn(user._id);
-        navigate("/")
+        navigate("/");
     }
 
 

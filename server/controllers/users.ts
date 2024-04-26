@@ -2,6 +2,17 @@ import { RequestHandler } from "express";
 import UserModel from "../models/user";
 import bcrypt from "bcrypt";
 
+export const getUser: RequestHandler = async(req, res) => {
+    try {
+        const user = await UserModel.findById(req.session.userId);
+        res.status(200).json(user);
+    }
+
+    catch(error) {
+        console.error(error);
+    }
+}
+
 export const logIn: RequestHandler = async(req, res) => {
     const username = req.body.username;
     const password = req.body.password;
