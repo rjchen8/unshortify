@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as LinkApi from "../network/linkapi";
+import * as UserApi from "../network/userapi";
 import Link from "../components/Link";
-import LinkType from "../models/LinkType"
+import LinkType from "../models/LinkType";
+
 
 interface MainProps {
     loggedIn: string | null;
@@ -25,6 +27,11 @@ const Main: React.FC<MainProps> = ({ loggedIn, setLoggedIn }) => {
         setUrl(""); // Clear the input box
     }
 
+    const handleLogout = async () => {
+        await UserApi.logoutUser();
+        setLoggedIn(null);
+    }
+
 
     useEffect(() => {
         const getAllLinks = async () => {
@@ -32,13 +39,15 @@ const Main: React.FC<MainProps> = ({ loggedIn, setLoggedIn }) => {
             setLinks(fetchedLinks);
         }
 
-        //getAllLinks();
+        getAllLinks();
     }, [])
 
     return (
         <div className="app-container">
             <h1>Unshortify</h1>
             <h3>figure out where that weird URL actually goes.</h3>
+
+            <span className="logout" onClick={handleLogout}>log out</span>
 
             <form className="urlForm" onSubmit={handleSubmit}>
                 <input className="inputfield" placeholder="URL here and hit enter..." value={url} onChange={handleChange}/>

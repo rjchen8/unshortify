@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllLinks = async () => {
     try {
-        const response = await axios.get("http://localhost:5000/api/links");
+        const response = await axios.get("http://localhost:5000/api/links", {withCredentials: true});
         const data = response.data;
         return data;
     }
@@ -14,7 +14,7 @@ export const getAllLinks = async () => {
 
 export const createLink = async (shortUrl: string) => {
     try {
-        const response = await axios.post("http://localhost:5000/api/links", { shortLink: shortUrl });
+        const response = await axios.post("http://localhost:5000/api/links", { shortLink: shortUrl }, {withCredentials: true});
         const data = response.data;
         return data;
     }
@@ -26,7 +26,7 @@ export const createLink = async (shortUrl: string) => {
 
 export const deleteLink = async (id: string) => {
     try {
-        await axios.delete(`http://localhost:5000/api/links/${id}`)
+        await axios.delete(`http://localhost:5000/api/links/${id}`, {withCredentials: true})
     }
 
     catch(error) {

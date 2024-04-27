@@ -83,6 +83,7 @@ export const logOut: RequestHandler = async(req, res) => {
         }
         
         else {
+            res.clearCookie("connect.sid");
             res.status(200).send("Logged out successfully.")
         }
     })

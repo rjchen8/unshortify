@@ -1,7 +1,6 @@
 import { useState } from "react";
 import * as UserApi from "../network/userapi";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface SignupProps {
     setLoggedIn: React.Dispatch<React.SetStateAction<string | null>>

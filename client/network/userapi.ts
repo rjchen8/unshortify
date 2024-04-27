@@ -27,12 +27,22 @@ export const createUser = async (username: string, password: string) => {
 
 export const loginUser = async (username: string, password: string) => {
     try {
-        const response = await axios.post("http://localhost:5000/api/users/login", { username: username, password: password })
+        const response = await axios.post("http://localhost:5000/api/users/login", { username: username, password: password }, {withCredentials: true})
         const data = await response.data
         return data;
     }
 
     catch(error) {
         console.error(error)
+    }
+}
+
+export const logoutUser = async () => {
+    try {
+        await axios.post("http://localhost:5000/api/users/logout", {}, {withCredentials: true});
+    }
+
+    catch(error) {
+        console.error(error);
     }
 }

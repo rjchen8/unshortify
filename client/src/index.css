@@ -96,3 +96,12 @@ input {
 a {
     color: white;
 }
+
+.logout {
+    color: white;
+    position: absolute;
+    top: 10px; /* adjust the top position as needed */
+    right: 10px; /* adjust the right position as needed */
+    cursor: pointer;
+    text-decoration: underline;
+}
