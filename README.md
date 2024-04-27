@@ -8,8 +8,9 @@ Frontend: React/TypeScript
 
 Backend: Node/Express + MongoDB
 
+Authentication: Session based, using express-session
+
 ## Next Steps
-- Authentication
 - Dockerization
 - Deployment (?)
 
