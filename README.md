@@ -21,7 +21,11 @@ Authentication: Session based, using express-session
 Clone the repo, and in the `server` directory, create a file `.env`. Populate the file with the following variables.
 
 `CONNECTION_STRING=<your mongoDB connection string>`
+
 `PORT=5000`
+
 `UNSHORTEN_TOKEN=<an API key from https://unshorten.me/api>`
+
 `PREVIEW_TOKEN=<an API key from https://www.linkpreview.net/>`
+
 `AUTH_SECRET=<anything you want>`
