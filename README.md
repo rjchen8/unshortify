@@ -15,3 +15,13 @@ Authentication: Session based, using express-session
 - Deployment (?)
 
 <img width="1190" alt="image" src="https://github.com/rjchen8/unshortify/assets/122511498/c858366b-30ee-424a-ac7e-8de47148429a">
+
+## Setup
+
+Clone the repo, and in the `server` directory, create a file `.env`. Populate the file with the following variables.
+
+`CONNECTION_STRING=` <- this is a MongoDB connection string to a cluster
+`PORT=5000` <- backend runs on 5000 by default 
+`UNSHORTEN_TOKEN=` <- an API key from https://unshorten.me/api
+`PREVIEW_TOKEN=` <- an API key from https://www.linkpreview.net/
+`AUTH_SECRET=` <- anything you want, usually a random string of letters/nums as part of the auth process
