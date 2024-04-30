@@ -29,3 +29,5 @@ Clone the repo, and in the `server` directory, create a file `.env`. Populate th
 `PREVIEW_TOKEN=<an API key from https://www.linkpreview.net/>`
 
 `AUTH_SECRET=<anything you want>`
+
+Afterwards, cd into the root directory and run `docker compose up`. The app can now be accessed from `localhost:5173`.
