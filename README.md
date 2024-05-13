@@ -1,5 +1,5 @@
 # Unshortify
-Unshortify is a URL "unshortener". It takes a URL that has been put through a URL shortener, and returns the original link.
+Unshortify is a URL "unshortener". It takes a URL that redirects you somewhere (e.g. it was put through a URL shortener, or it's an attempt to take you to a malicious website), and returns the original link so that you know where exactly you're going to end up.
 A preview of the site is also shown. Two APIs are used - one for the "unshortening" (unshorten.me), and the other for the site preview (LinkPreview).
 
 
